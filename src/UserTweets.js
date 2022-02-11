@@ -8,6 +8,7 @@ import UserProfile from "./UserProfile";
 // } from "react-router-dom";
 import UserTweet from "./UserTweet";
 import ViewHeader from "./ViewHeader";
+import { API_URL } from "./config.js";
 
 class UserTweets extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class UserTweets extends React.Component {
   }
 
   async componentDidMount() {
-    let tweets = await fetch('http://localhost:3000/tweets')
+    let tweets = await fetch(API_URL + '/tweets')
       .then(data => data.json());
     
     let userTweets = tweets.filter(tweet => tweet.username === this.state.currentUser);
