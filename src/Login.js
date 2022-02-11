@@ -1,4 +1,5 @@
 import React from "react";
+import { API_URL } from "./config.js";
 
 class Login extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Login extends React.Component {
     const { history } = this.props;
 
     try {
-      const rawResponse = await fetch('http://localhost:3000/login', {
+      const rawResponse = await fetch(API_URL + '/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

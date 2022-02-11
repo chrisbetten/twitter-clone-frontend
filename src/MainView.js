@@ -2,6 +2,7 @@ import React from "react";
 import MainFeedTweet from "./MainFeedTweet";
 import ViewHeader from "./ViewHeader";
 import jwtDecode from "jwt-decode";
+import { API_URL } from "./config.js";
 
 // import {
 //   HashRouter,
@@ -31,7 +32,7 @@ class MainView extends React.Component {
 
     const payload = jwtDecode(token);
 
-    let tweets = await fetch('http://localhost:3000/tweets')
+    let tweets = await fetch(API_URL + '/tweets')
       .then(data => data.json());
     console.log(tweets);
 

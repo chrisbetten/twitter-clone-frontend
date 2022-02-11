@@ -44,13 +44,6 @@ class UserTweets extends React.Component {
           <UserProfile
             currentUser={this.state.currentUser}
           />
-          {/* <div className='user-profile-container'>
-            <img alt='User profile' className={['user-profile-img', 'rounded'].join(' ')} src='https://upload.wikimedia.org/wikipedia/commons/4/49/Jonathan_G_Meath_portrays_Santa_Claus.jpg' />
-            <div className='user-info-container'>
-              <h2>@santaclaus</h2>
-              <p>I'm a jolly old fellow, ho ho ho!</p>
-            </div>
-          </div> */}
           <div className='all-tweets-by-user-container'>
             {this.state.userTweets && this.state.userTweets
             .map((tweet) => {

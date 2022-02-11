@@ -2,10 +2,10 @@ import React from "react";
 import CreatedAt from "./CreatedAt";
 
 import {
-  HashRouter,
-  Route,
+  // HashRouter,
+  // Route,
   Link,
-  Switch
+  // Switch
 } from "react-router-dom";
 
 class MainFeedTweet extends React.Component {

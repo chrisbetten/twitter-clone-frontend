@@ -1,4 +1,5 @@
 import React from "react";
+import { API_URL } from "./config.js";
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -16,9 +17,7 @@ class UserProfile extends React.Component {
     try {
       let currentUser = this.state.currentUser;
 
-      console.log(`http://localhost:3000/tweets/userinfo/${currentUser}`);
-
-      const userInfo = await fetch(`http://localhost:3000/tweets/userinfo/${currentUser}`)
+      const userInfo = await fetch(API_URL `/tweets/userinfo/${currentUser}`)
       .then(data => data.json());
       
       console.log('USER INFO', userInfo);
