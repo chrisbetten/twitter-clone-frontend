@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import './App.css';
+import MainHeader from './MainHeader';
+
+import {
+  HashRouter,
+  Route,
+  // Link,
+  Switch
+} from "react-router-dom";
+
+import MainView from './MainView';
+import UserTweets from './UserTweets';
+import Login from './Login';
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <HashRouter>
+        <div className="App">
+          <MainHeader/>
+
+          <Switch>
+            <Route path="/tweets/:user" component={UserTweets} />
+            <Route path="/tweets" component={MainView} />
+            <Route path="/login" component={Login} />
+          </Switch>
+        </div>
+      </HashRouter>
+    );
+  }
 }
 
 export default App;
