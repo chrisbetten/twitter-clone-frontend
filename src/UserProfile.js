@@ -17,7 +17,7 @@ class UserProfile extends React.Component {
     try {
       let currentUser = this.state.currentUser;
 
-      const userInfo = await fetch(API_URL `/tweets/userinfo/${currentUser}`)
+      const userInfo = await fetch(API_URL + `/tweets/userinfo/${currentUser}`)
       .then(data => data.json());
       
       console.log('USER INFO', userInfo);
